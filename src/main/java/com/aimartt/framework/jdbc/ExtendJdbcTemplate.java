@@ -7,11 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcOperations;
 
-/**
- * <p></p>
- * Copyright (c) aimartt
- * @author aimartt on 2015年9月21日
- */
 public interface ExtendJdbcTemplate extends JdbcOperations {
 
 	/**

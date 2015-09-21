@@ -13,11 +13,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.aimartt.framework.jdbc.ExtendJdbcTemplate;
 
-/**
- * <p></p>
- * Copyright (c) aimartt
- * @author aimartt on 2015年9月21日
- */
 public class MysqlExtendJdbcTemplate extends JdbcTemplate implements ExtendJdbcTemplate {
 
 	static final Logger logger = Logger.getLogger(MysqlExtendJdbcTemplate.class);

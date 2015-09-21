@@ -11,13 +11,6 @@ import java.util.regex.Pattern;
 
 import org.springframework.util.Assert;
 
-import com.aimartt.framework.SearchFilter;
-
-/**
- * <p></p>
- * Copyright (c) aimartt
- * @author aimartt on 2015年9月21日
- */
 class QueryCondition {
 
 	final static String QUERY_STRING = " select * from (%s) x where 1 = 1 ";

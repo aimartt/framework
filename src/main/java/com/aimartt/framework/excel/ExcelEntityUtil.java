@@ -35,8 +35,6 @@ import com.aimartt.framework.util.DateUtil;
 
 /**
  * <p>Excel 导出工具类。</p>
- * Copyright (c) aimartt
- * @author aimartt on 2015年9月17日
  */
 public class ExcelEntityUtil {
 	
@@ -48,7 +46,6 @@ public class ExcelEntityUtil {
 	 * @param response
 	 * @param fileName
 	 * @param exportData
-	 * @author aimartt on 2015年9月17日
 	 */
 	public static <T> void doExportForXls(HttpServletResponse response, String fileName, List<T> exportData) {
 		doExportExcel(response, fileName, new ExcelWorkbook(new HSSFWorkbook(), "xls"), exportData);
@@ -59,7 +56,6 @@ public class ExcelEntityUtil {
 	 * @param response
 	 * @param fileName
 	 * @param exportData
-	 * @author aimartt on 2015年9月17日
 	 */
 	public static <T> void doExportForXlsx(HttpServletResponse response, String fileName, List<T> exportData) {
 		doExportExcel(response, fileName, new ExcelWorkbook(new XSSFWorkbook(), "xlsx"), exportData);
