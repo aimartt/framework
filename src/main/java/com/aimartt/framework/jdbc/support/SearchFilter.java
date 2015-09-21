@@ -1,4 +1,4 @@
-package com.aimartt.framework;
+package com.aimartt.framework.jdbc.support;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,12 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import com.aimartt.framework.exception.BusinessException;
 import com.google.common.collect.Lists;
 
-/**
- * Title:
- * <p></p>
- * Copyright (c) aimartt
- * @author aimartt on 2015年9月17日
- */
 public class SearchFilter {
 
 	public final String fieldName;
@@ -31,7 +25,6 @@ public class SearchFilter {
 	 * <p>如：userName 将返回 user_name</p>
 	 * @param columnName 字段名称
 	 * @return
-	 * @author aimartt on 2015年9月17日
 	 */
 	public static String coverdColumnName(String columnName) {
 		StringBuffer str = new StringBuffer();
@@ -50,7 +43,6 @@ public class SearchFilter {
 	 * <p>解析查询条件</p>
 	 * @param searchParams
 	 * @return
-	 * @author aimartt on 2015年9月17日
 	 */
 	public static List<SearchFilter> parse(Map<String, Object> searchParams) {
 		List<SearchFilter> filters = Lists.newArrayList();
@@ -91,8 +83,6 @@ public class SearchFilter {
 
 	/**
 	 * <p>条件操作符枚举</p>
-	 * Copyright (c) aimartt
-	 * @author aimartt on 2015年9月17日
 	 */
 	public enum Operator {
 		/** Equal */
