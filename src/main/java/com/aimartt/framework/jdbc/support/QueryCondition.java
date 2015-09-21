@@ -26,23 +26,19 @@ class QueryCondition {
 	}
 
 	/**
-	 * <p></p>
 	 * @param sql
 	 * @param conditions
 	 * @return
-	 * @author aimartt on 2015年9月21日
 	 */
 	public static QueryCondition createResultQuery(String sql, Map<String, Object> conditions) {
 		return createResultQuery(sql, conditions, null);
 	}
 
 	/**
-	 * <p></p>
 	 * @param sql
 	 * @param conditions
 	 * @param orderBys
 	 * @return
-	 * @author aimartt on 2015年9月21日
 	 */
 	public static QueryCondition createResultQuery(String sql, Map<String, Object> conditions,
 			Map<String, Boolean> orderBys) {
@@ -51,11 +47,9 @@ class QueryCondition {
 	}
 
 	/**
-	 * <p></p>
 	 * @param sql
 	 * @param objects
 	 * @return
-	 * @author aimartt on 2015年9月21日
 	 */
 	public static QueryCondition createCountQuery(String sql, Object... objects) {
 		String countQuery = String.format(COUNT_QUERY_STRING, sql);
@@ -63,11 +57,9 @@ class QueryCondition {
 	}
 
 	/**
-	 * <p></p>
 	 * @param sql
 	 * @param conditions
 	 * @return
-	 * @author aimartt on 2015年9月21日
 	 */
 	public static QueryCondition createCountQuery(String sql, Map<String, Object> conditions) {
 		String countQuery = String.format(COUNT_QUERY_STRING2, sql);
@@ -75,11 +67,9 @@ class QueryCondition {
 	}
 
 	/**
-	 * <p></p>
 	 * @param sql
 	 * @param conditions
 	 * @return
-	 * @author aimartt on 2015年9月21日
 	 */
 	public static QueryCondition createQuery(String sql, Map<String, Object> conditions) {
 		return createQuery(sql, conditions, null);
