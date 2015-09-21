@@ -38,7 +38,7 @@ import com.aimartt.framework.util.DateUtil;
  */
 public class ExcelEntityUtil {
 	
-	private static final DateFormat DATE_FORMAT = new SimpleDateFormat(DateUtil.PATTEN_OF_DATETIME);
+	private static final DateFormat DATE_FORMAT = new SimpleDateFormat(DateUtil.PATTEN_OF_DATETIME_DASH);
 	private static final Object[] EMPTY = new Object[0];
 
 	/**

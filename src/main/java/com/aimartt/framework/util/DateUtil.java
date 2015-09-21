@@ -3,7 +3,6 @@
  */
 package com.aimartt.framework.util;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -17,9 +16,25 @@ import org.apache.commons.lang3.StringUtils;
 public class DateUtil {
 	
 	/** 包含日期的模式 yyyy-MM-dd */
-	public static final String PATTEN_OF_DATE = "yyyy-MM-dd";
+	public static final String PATTEN_OF_DATE_DASH = "yyyy-MM-dd";
+	/** 包含日期的模式 yyyy/MM/dd */
+	public static final String PATTEN_OF_DATE_SLASH = "yyyy/MM/dd";
 	/** 包含日期时间的模式 yyyy-MM-dd HH:mm:ss */
-	public static final String PATTEN_OF_DATETIME = "yyyy-MM-dd HH:mm:ss";
+	public static final String PATTEN_OF_DATETIME_DASH = "yyyy-MM-dd HH:mm:ss";
+	/** 包含日期时间的模式 yyyy/MM/dd HH:mm:ss */
+	public static final String PATTEN_OF_DATETIME_SLASH = "yyyy/MM/dd HH:mm:ss";
+	/** 无分隔符的日期时间模式 yyyyMMddHHmmssSSS */
+	public static final String PATTEN_WITH_NO_SEPARATOR = "yyyyMMddHHmmssSSS";
+	
+	/** 全部模式 */
+	public static final String[] PARSE_PATTERNS = {
+			PATTEN_OF_DATE_DASH,
+			PATTEN_OF_DATE_SLASH,
+			PATTEN_OF_DATETIME_DASH,
+			PATTEN_OF_DATETIME_SLASH,
+			PATTEN_WITH_NO_SEPARATOR
+	};
+	
 	/** 日期的正则表达式 yyyy-MM-dd */
 	public static final String REGEX_OF_DATE = "[1-2]\\d{3}-\\d{2}-\\d{2}";
 	
@@ -100,7 +115,7 @@ public class DateUtil {
 		if (date == null) {
 			return "";
 		}
-		SimpleDateFormat format = new SimpleDateFormat(PATTEN_OF_DATETIME);
+		SimpleDateFormat format = new SimpleDateFormat(PATTEN_OF_DATETIME_DASH);
 		try {
 			String dateString = format.format(date); 
 			return dateString;
@@ -125,7 +140,7 @@ public class DateUtil {
 			return "";
 		}
 		if (StringUtils.isEmpty(pattern)) {
-			pattern = PATTEN_OF_DATETIME;
+			pattern = PATTEN_OF_DATETIME_DASH;
 		}
 		SimpleDateFormat format = new SimpleDateFormat(pattern);
 		try {
@@ -136,37 +151,7 @@ public class DateUtil {
 		}
 	}
 	
-	/**
-	 * 日期字符串转换成 <tt>Date</tt> 对象。
-	 * <ul>
-	 * <li>若 <tt>dateString</tt> 为 <tt>null</tt> 或空字符串，则返回 <tt>null</tt></li>
-	 * <li>若发生异常，则返回 <tt>null</tt></li>
-	 * </ul>
-	 * @param dateString yyyy-MM-dd 模式的日期字符串
-	 * @return 
-	 * @category 日期字符串转换成 Date 对象
-	 */
-	public static Date stringToDate(String dateString) {
-		if (StringUtils.isEmpty(dateString) || !dateString.matches(REGEX_OF_DATE)) {
-			return null;
-		}
-		SimpleDateFormat format = new SimpleDateFormat(PATTEN_OF_DATE);
-		try {
-			Date date = format.parse(dateString);
-			return date;
-		} catch (ParseException e) {
-			return null;
-		}
-	}
-	
 	private DateUtil() {
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(dateToCnDate("2013-05-03"));
-		System.out.println(dateToStr(new Date()));
-		System.out.println(dateToStr(new Date(), "yy-M-d : H:m:s"));
-		System.out.println(stringToDate("2013-05-03"));
-	}
-
 }
